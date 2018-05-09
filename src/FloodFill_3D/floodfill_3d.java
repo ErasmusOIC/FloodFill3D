@@ -93,7 +93,7 @@ public class floodfill_3d implements PlugIn{
 
         boolean[] pta_test = new boolean[pta.length];
 
-        //zs = imp.getSlice();
+        zs = imp.getSlice();
 
         ImageStack ims = imp.getImageStack();
 
@@ -110,7 +110,10 @@ public class floodfill_3d implements PlugIn{
 
                 xs = (int) pta[l].getX();
                 ys = (int) pta[l].getY();
-                zs = (int) pta[l].getZ();
+                
+                if((int) pta[l].getZ()!=0){                
+                    zs = (int) pta[l].getZ();
+                }
 
 
                 //IJ.showMessage(" "+xs+" "+ys+" "+zs);
